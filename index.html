@@ -6,215 +6,199 @@
     <title>تحميل تطبيق قهوة عمق</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables for easy theme management */
-        :root {
-            --brand-primary: #6c2c44;
-            --brand-secondary: #8b3555;
-            --text-primary: #333;
-            --text-secondary: #666;
-            --background-light: #fdfcfd;
-            --white: #fff;
-            --font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif;
+        * {
+            box-sizing: border-box;
         }
-
-        /* Base Body Styles */
         body {
             margin: 0;
-            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
-            font-family: var(--font-family);
+            padding: 1rem;
+            background: linear-gradient(135deg, #6c2c44 0%, #8b3555 50%, #a64267 100%);
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 1rem;
-            box-sizing: border-box;
         }
-
-        /* Main Container Styling */
         .container {
             text-align: center;
-            padding: 2.5rem 2rem;
-            background: var(--background-light);
-            border-radius: 24px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 20px 50px rgba(108, 44, 68, 0.3);
-            max-width: 400px;
+            padding: 2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(108, 44, 68, 0.3);
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
-            /* Animation Setup */
-            opacity: 0;
-            transform: translateY(20px);
-            visibility: hidden;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            max-width: 350px;
+            margin: 0 auto;
         }
-
-        /* Class to trigger visibility and animation */
-        .container.visible {
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible;
-        }
-
-        /* Staggered animation for child elements */
-        .container.visible > * {
-            animation: fadeInUp 0.5s ease-out both;
-        }
-        .container.visible .app-logo { animation-delay: 0.1s; }
-        .container.visible h1 { animation-delay: 0.2s; }
-        .container.visible p { animation-delay: 0.3s; }
-        .container.visible .ios-btn { animation-delay: 0.4s; }
-        .container.visible .android-btn { animation-delay: 0.5s; }
-        .container.visible .brand-text { animation-delay: 0.6s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Logo Styling */
         .app-logo {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 1.5rem;
-            background-image: url('./umq-logo.png'); /* Ensure this path is correct */
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background-image: url('./umq-logo.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            border-radius: 22px;
-            box-shadow: 0 5px 15px rgba(108, 44, 68, 0.15);
+            border-radius: 18px;
         }
-
-        /* Typography */
         h1 {
-            color: var(--brand-primary);
-            margin: 0 0 0.5rem;
-            font-size: 2rem;
+            background: linear-gradient(135deg, #6c2c44 0%, #8b3555 50%, #a64267 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
             font-weight: 700;
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.2;
         }
-
         p {
-            color: var(--text-secondary);
-            margin: 0 0 2.5rem;
-            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            font-family: 'Tajawal', sans-serif;
             font-weight: 400;
-            line-height: 1.6;
-            max-width: 300px;
+            line-height: 1.4;
         }
-        
-        
-
-        .download-btn:hover {
+        .download-btn {
+            display: block;
+            width: 100%;
+            max-width: 220px;
+            height: 65px;
+            margin: 20px auto;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            /* Add touch target size for mobile */
+            min-height: 44px;
+        }
+        .download-btn:hover,
+        .download-btn:focus {
             transform: translateY(-3px);
-            background-color: #000;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        
+            box-shadow: 0 15px 35px rgba(108, 44, 68, 0.4);
         }
-
-        .background-image: 
-            url('./google-play.png');
-
+        .download-btn:active {
+            transform: translateY(-1px);
         }
-
+        .ios-btn {
+            background-image: url('./apple-store.png');
+        }
         .android-btn {
             background-image: url('./google-play.png');
         }
-
-        .btn-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            line-height: 1.2;
-        }
-
-        .btn-text .subtitle {
-            font-size: 0.8rem;
-            font-weight: 300;
-        }
-
-
-        
-
-        /* Footer Branding */
         .brand-text {
-            color: var(--brand-primary);
-            font-size: 0.9rem;
-            margin-top: 2rem;
+            background: linear-gradient(135deg, #6c2c44 0%, #8b3555 50%, #a64267 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            margin-top: 1.5rem;
             font-weight: 500;
+            font-family: 'Tajawal', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 480px) {
+            body {
+                padding: 0.5rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 20px;
+                min-height: auto;
+            }
+            .app-logo {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 1rem;
+            }
+            .download-btn {
+                height: 60px;
+                margin: 15px auto;
+                max-width: 200px;
+            }
+            h1 {
+                margin-bottom: 0.3rem;
+            }
+            p {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 320px) {
+            .container {
+                padding: 1rem 0.8rem;
+            }
+            .download-btn {
+                max-width: 180px;
+                height: 55px;
+            }
+        }
+
+        /* Landscape orientation on mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .container {
+                padding: 1rem;
+                max-width: 300px;
+            }
+            .app-logo {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 0.8rem;
+            }
+            .download-btn {
+                height: 50px;
+                margin: 10px auto;
+            }
         }
     </style>
 </head>
 <body>
-    
-    <!-- This container is hidden by default and shown via JavaScript for desktop users -->
-    <div class="container" id="choiceContainer">
+    <div class="container" id="choiceContainer" style="display: none;">
         <div class="app-logo"></div>
         <h1>تطبيق قهوة عمق</h1>
-        <p>تجربة القهوة المختصة بين يديك. حمّل التطبيق الآن واستمتع.</p>
+        <p>اختر منصتك لتحميل التطبيق</p>
         
-        <a href="#" id="iosLink" class="download-btn ios-btn">
-            <div class="btn-icon"></div>
-        </a>
+        <a href="#" id="iosLink" class="download-btn ios-btn"></a>
         
-        <a href="#" id="androidLink" class="download-btn android-btn">
-            <div class="btn-icon"></div>
-        </a>
+        <a href="#" id="androidLink" class="download-btn android-btn"></a>
         
-        <div class="brand-text">UMQ COFFEE © 2024</div>
+        <div class="brand-text">UMQ COFFEE</div>
     </div>
-
     <script>
-        // --- App Store URLs ---
+        // Your app store URLs
         const APP_STORE_URL = 'https://apps.apple.com/sa/app/umq-coffee-%D9%82%D9%87%D9%88%D8%A9-%D8%B9%D9%85%D9%82/id6477337730?l=ar';
         const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.umqcaffee.www';
         
-        /**
-         * Detects the user's operating system and either redirects them
-         * to the appropriate app store or shows a choice for desktop users.
-         */
         function detectAndRedirect() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const userAgent = navigator.userAgent.toLowerCase();
             
-            // iOS detection
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            if (/iphone|ipad|ipod/.test(userAgent)) {
+                // iOS device - redirect immediately to App Store
                 window.location.href = APP_STORE_URL;
-                return;
-            }
-            
-            // Android detection
-            if (/android/i.test(userAgent)) {
+            } else if (/android/.test(userAgent)) {
+                // Android device - redirect immediately to Play Store
                 window.location.href = PLAY_STORE_URL;
-                return;
+            } else {
+                // Desktop or other device - show choice UI
+                showChoiceInterface();
             }
-            
-            // If neither, assume desktop and show the choice interface
-            showChoiceInterface();
         }
         
-        /**
-         * Sets up the download links and makes the choice container visible.
-         */
         function showChoiceInterface() {
-            const container = document.getElementById('choiceContainer');
-            if (container) {
-                // Set up the download links
-                document.getElementById('iosLink').href = APP_STORE_URL;
-                document.getElementById('androidLink').href = PLAY_STORE_URL;
-                
-                // Add the 'visible' class to trigger the CSS animation
-                container.classList.add('visible');
-            }
+            // Set up the download links
+            document.getElementById('iosLink').href = APP_STORE_URL;
+            document.getElementById('androidLink').href = PLAY_STORE_URL;
+            
+            // Show the choice container
+            document.getElementById('choiceContainer').style.display = 'block';
         }
         
-        // Run detection when the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', detectAndRedirect);
+        // Run detection immediately when page loads
+        detectAndRedirect();
     </script>
 </body>
 </html>
