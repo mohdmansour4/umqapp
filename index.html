@@ -46,27 +46,25 @@
         }
         .download-btn {
             display: block;
-            width: 100%;
-            padding: 15px 20px;
-            margin: 15px 0;
+            width: 200px;
+            height: 60px;
+            margin: 15px auto;
             text-decoration: none;
             border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.1rem;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-sizing: border-box;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         .download-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(108, 44, 68, 0.3);
         }
         .ios-btn {
-            background: #6c2c44;
-            color: white;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMjAwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjYwIiByeD0iMTIiIGZpbGw9IiMwMDAwMDAiLz4KPHN2ZyB4PSIyMCIgeT0iMTAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xOC43MSAxOS41Yy0uODMgMS4yNC0xLjcxIDIuNDUtMy4wNSAyLjQ3LTEuMzQuMDMtMS43Ni0uNzktMy4yOC0uNzktMS41MiAwLTIgLjc5LTMuMjYuNzctMS4yNC0uMDItMi4yNS0xLjMtMy4wOC0yLjU0QzQuNTEgMTcuNTEgMy44NCAxNC43MyA0IDE0Yy41My0xLjUtMS4wNy0yLjctMS4xNy0yLjdjLS4wOSAwLS4xNS0uMTQtLjE1LS4yNSAwLS4xMS4wNi0uMjUuMTUtLjI1LjQtLjA2IDEuMjMuNjcgMS42NS44NUMzLjEyIDEyIDMuNjEgMTMuMDkgNC4wOCAxMy43OGMwIDAgLjczIDEuMDkgMS40NiAxLjc5LjczLjcgMS41OCAxLjEzIDIuNDMuOTNzMS42NC0uNzYgMi40NC0xLjI5cS0xLjczLTMuMzctNC41Mi0zLjg0Yy0uNDQtLjA3LS42OC0uNTktLjUtLjk2LjE5LS4zNy42Mi0uNSAxLS40M2wxLjA2IDEuMDNMMTMuMTggOC4zOGMuMjctLjExLjUzLS4wNi43LjA2Yy4xNS4xOS4xOS40My4wNS42NGwtMS4wOSA5LjkxIDIuMTgtMy43My0xLjI5LjY5TDE1LjE1IDEwaDQuNDRtLTEuNTUtNy4xOEMxOC4yNyAxLjExIDE4LjI4LjQgMTguMjguNDE2Yy0uMDA4LS4yMjEtLjE3LS4zOTgtLjM4LS4zOThoLS4xOWMtLjIyMiAwLS40MDIuMTgtLjQwMi40MDJjMCAuMjEuMTY2LjM4LjM3OS4zOThoLjI0NkM5LjQ2MSAyLjgxIDkuNTI5IDIuODE0IDkuNTI5IDIuODE0eiIvPgo8L3N2Zz4KPHR5cGU+VGV4dCB4PSI1NSIgeT0iMjUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjEwIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIj5Eb3dubG9hZCBvbiB0aGU8L3R5cGU+Cjx0ZXh0IHg9IjU1IiB5PSI0NSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtd2VpZ2h0PSJib2xkIj5BcHAgU3RvcmU8L3RleHQ+Cjwvc3ZnPgo=');
         }
         .android-btn {
-            background: #8b3555;
-            color: white;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMjAwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjYwIiByeD0iMTIiIGZpbGw9IiMwMDAwMDAiLz4KPHN2ZyB4PSIyMCIgeT0iMTAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KPHA9YXRoIGQ9Im0xNy42IDkuNDgtLjkuNTNjLS4zLjE3LS42Ny4xNC0uOTMtLjA5bC0zLjI3LTIuODNjLS4yNi0uMjMtLjY2LS4yMy0uOTMgMEw4LjMgOS45MmMtLjI2LjIzLS42My4yNi0uOTMuMDlsLS45LS41M2MtLjMtLjE3LS42Ny0uMTQtLjkzLjA5bC0xLjYgMS4zOGMtLjI2LjIzLS4yNi42MSAwIC44M2wxIDEuMzhjLjI2LjIzLjYzLjI2LjkzLjA5bC45LS41M2MuMy0uMTcuNjctLjE0LjkzLjA5bDMuMjcgMi44M2MuMjYuMjMuNjYuMjMuOTMgMGwzLjI3LTIuODNjLjI2LS4yMy42My0uMjYuOTMtLjA5bC45LjUzYy4zLjE3LjY3LjE0LjkzLS4wOWwxLjYtMS4zOGMuMjYtLjIzLjI2LS42MSAwLS44M2wtMS0xLjM4Yy0uMjYtLjIzLS42My0uMjYtLjkzLS4wOXoiIGZpbGw9IiM0Mjg1RjQiLz4KPHA9YXRoIGQ9Im0xNC43IDEwLjgtLjktLjUzYy0uMy0uMTctLjY3LS4xNC0uOTMuMDlsLTEuNiAxLjM4Yy0uMjYuMjMtLjI2LjYxIDAgLjgzbDEgMS4zOGMuMjYuMjMuNjMuMjYuOTMuMDlsLjkuNTNjLjMuMTcuNjcuMTQuOTMtLjA5bDEuNi0xLjM4Yy4yNi0uMjMuMjYtLjYxIDAtLjgzbC0xLTEuMzhjLS4yNi0uMjMtLjYzLS4yNi0uOTMtLjA5eiIgZmlsbD0iI0ZCQkMwNSIvPgo8cGF0aCBkPSJtOS4zIDEwLjgtLjkuNTNjLS4zLjE3LS42Ny4xNC0uOTMtLjA5bC0xLjYtMS4zOGMtLjI2LS4yMy0uMjYtLjYxIDAtLjgzbDEtMS4zOGMuMjYtLjIzLjYzLS4yNi45My0uMDlsLjkuNTNjLjMuMTcuNjcuMTQuOTMtLjA5bDEuNi0xLjM4Yy4yNi0uMjMuMjYtLjYxIDAtLjgzbC0xLTEuMzhjLS4yNi0uMjMtLjYzLS4yNi0uOTMtLjA5eiIgZmlsbD0iI0VBNDMzNSIvPgo8cGF0aCBkPSJtMTIgMTYuNWMtLjI4IDAtLjUtLjIyLS41LS41di01YzAtLjI4LjIyLS41LjUtLjVzLjUuMjIuNS41djVjMCAuMjgtLjIyLjUtLjUuNXoiIGZpbGw9IiMzNEE4NTMiLz4KPC9zdmc+Cjx0ZXh0IHg9IjU1IiB5PSIyNSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiPkdFVCBJVCBPTjwvdGV4dD4KPHR5eHQgeD0iNTUiIHk9IjQ1IiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxOCIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC13ZWlnaHQ9ImJvbGQiPkdvb2dsZSBQbGF5PC90ZXh0Pgo8L3N2Zz4K');
         }
         .brand-text {
             color: #6c2c44;
@@ -82,13 +80,9 @@
         <h1>تطبيق قهوة عمق</h1>
         <p>اختر منصتك لتحميل التطبيق</p>
         
-        <a href="#" id="iosLink" class="download-btn ios-btn">
-            🍎 تحميل للآيفون والآيباد
-        </a>
+        <a href="#" id="iosLink" class="download-btn ios-btn"></a>
         
-        <a href="#" id="androidLink" class="download-btn android-btn">
-            🤖 تحميل للأندرويد
-        </a>
+        <a href="#" id="androidLink" class="download-btn android-btn"></a>
         
         <div class="brand-text">UMQ COFFEE</div>
     </div>
