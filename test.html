@@ -6,130 +6,42 @@
     <title>Download Our App</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .container {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            max-width: 400px;
-        }
-        .app-icon {
-            width: 80px;
-            height: 80px;
-            background: #fff;
-            border-radius: 20px;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-        .download-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #fff;
-            color: #333;
-            text-decoration: none;
-            border-radius: 25px;
-            margin: 1rem;
-            font-weight: 600;
-            transition: transform 0.2s ease;
-        }
-        .download-btn:hover {
-            transform: translateY(-2px);
-        }
-        .loading {
-            opacity: 0.7;
+            background: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="app-icon">📱</div>
-        <h1>Download Our App</h1>
-        <p id="status">Detecting your device...</p>
-        <div id="buttons" style="display: none;">
-            <a href="#" id="download-link" class="download-btn">Download Now</a>
-            <br>
-            <a href="#" id="alt-link" class="download-btn" style="background: transparent; border: 2px solid white; color: white;">Other Platform</a>
-        </div>
-    </div>
+    <!-- Redirect page - no visible content -->
 
     <script>
         // Your app store URLs
         const APP_STORE_URL = 'https://apps.apple.com/sa/app/umq-coffee-%D9%82%D9%87%D9%88%D8%A9-%D8%B9%D9%85%D9%82/id6477337730?l=ar';
         const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.umqcaffee.www';
-        const FALLBACK_URL = 'https://your-website.com'; // Your website or landing page
+        const FALLBACK_URL = 'https://order.umqcoffee.com'; // Your website or landing page
 
-        function detectDevice() {
+        function detectAndRedirect() {
             const userAgent = navigator.userAgent.toLowerCase();
-            const statusEl = document.getElementById('status');
-            const buttonsEl = document.getElementById('buttons');
-            const downloadLink = document.getElementById('download-link');
-            const altLink = document.getElementById('alt-link');
-
-            let primaryUrl, secondaryUrl, deviceType;
+            let redirectUrl;
 
             if (/iphone|ipad|ipod/.test(userAgent)) {
-                // iOS device
-                primaryUrl = APP_STORE_URL;
-                secondaryUrl = PLAY_STORE_URL;
-                deviceType = 'iOS';
-                downloadLink.textContent = 'Download from App Store';
-                altLink.textContent = 'Get Android Version';
+                // iOS device - redirect to App Store
+                redirectUrl = APP_STORE_URL;
             } else if (/android/.test(userAgent)) {
-                // Android device
-                primaryUrl = PLAY_STORE_URL;
-                secondaryUrl = APP_STORE_URL;
-                deviceType = 'Android';
-                downloadLink.textContent = 'Download from Play Store';
-                altLink.textContent = 'Get iOS Version';
+                // Android device - redirect to Play Store
+                redirectUrl = PLAY_STORE_URL;
             } else {
-                // Desktop or other device
-                primaryUrl = FALLBACK_URL;
-                secondaryUrl = FALLBACK_URL;
-                deviceType = 'Desktop/Other';
-                downloadLink.textContent = 'Visit Our Website';
-                altLink.style.display = 'none';
+                // Desktop or other device - redirect to website
+                redirectUrl = FALLBACK_URL;
             }
 
-            // Update UI
-            statusEl.textContent = `${deviceType} device detected`;
-            downloadLink.href = primaryUrl;
-            altLink.href = secondaryUrl;
-            buttonsEl.style.display = 'block';
-
-            // Auto-redirect after 2 seconds (optional)
-            setTimeout(() => {
-                if (deviceType !== 'Desktop/Other') {
-                    window.location.href = primaryUrl;
-                }
-            }, 2000);
+            // Immediate redirect
+            window.location.href = redirectUrl;
         }
 
-        // Run detection when page loads
-        window.addEventListener('load', detectDevice);
-
-        // Fallback: if JavaScript doesn't work, show manual options
-        setTimeout(() => {
-            if (document.getElementById('buttons').style.display === 'none') {
-                document.getElementById('status').textContent = 'Choose your platform:';
-                document.getElementById('download-link').textContent = 'iOS App Store';
-                document.getElementById('download-link').href = APP_STORE_URL;
-                document.getElementById('alt-link').textContent = 'Google Play Store';
-                document.getElementById('alt-link').href = PLAY_STORE_URL;
-                document.getElementById('buttons').style.display = 'block';
-            }
-        }, 3000);
+        // Run detection immediately when page loads
+        detectAndRedirect();
     </script>
 </body>
+</html>
